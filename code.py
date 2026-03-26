@@ -88,4 +88,14 @@ for user, stats in userSpamRecord.items():
     #print(f"Failed : {stats['failedAttempts']}")
     #print(f"Ip changed : {len(stats['ips'])-1}")
 
+print()
+print("---------------------------Task4----------------------------")
+sorted_data = sorted(userSpamRecord.items(), key=lambda x: x[1]['userRiskScore'], reverse=True)
 
+for user, info in sorted_data:
+    print(user, info['userRiskScore'])
+
+print()
+print("TOP RISKED USERS")
+for top, info in sorted_data[:2]:
+    print(top, info['userRiskScore'])
