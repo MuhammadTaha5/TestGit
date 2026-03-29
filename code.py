@@ -125,7 +125,7 @@ for user, stats in userSpamRecord.items():
          
 print()
 print("---------------------------Task3----------------------------")
-
+print("Risk Score of Each User")
 for user, stats in userSpamRecord.items():
     print(f"{user} : {stats['userRiskScore']}")
     #print(f"Success : {stats['successAttempts']}")
@@ -136,8 +136,6 @@ print()
 print("---------------------------Task4----------------------------")
 sorted_data = sorted(userSpamRecord.items(), key=lambda x: x[1]['userRiskScore'], reverse=True)
 
-for user, info in sorted_data:
-    print(user, info['userRiskScore'])
 
 print()
 print("---- SECURITY REPORT ----")
