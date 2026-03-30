@@ -140,10 +140,13 @@ sorted_data = sorted(userSpamRecord.items(), key=lambda x: x[1]['userRiskScore']
 print()
 print("---- SECURITY REPORT ----")
 print("HIGH RISKED USERS")
+index = 1
+
 for top, info in sorted_data[:2]:
-    print(top)
+    print(f'{index}. {top}')
+    index+=1
 
 securityRecommendations = getSecurityRequirements()
-print("Recommendations")
+print("Recommendations:")
 for index, value in enumerate(securityRecommendations, start=1):
     print(f"{index}. {value}")
